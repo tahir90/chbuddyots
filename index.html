@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuddyBots.ai - Turn Chaos Into Competitive Advantage With Custom AI</title>
+    <meta name="description" content="We engineer tailor-made AI workflows that cut operating costs by up to 40% in 90 days. Voice AI agents, lead generation, and process automation.">
+    
+    <!-- OpenGraph Meta -->
+    <meta property="og:title" content="BuddyBots.ai - Custom AI Solutions">
+    <meta property="og:description" content="Cut operating costs by up to 40% in 90 days with custom AI workflows">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buddybots.ai">
+    
+    <!-- Twitter Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BuddyBots.ai - Custom AI Solutions">
+    <meta name="twitter:description" content="Cut operating costs by up to 40% in 90 days with custom AI workflows">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BuddyBots.ai",
+        "description": "AI that actually works",
+        "url": "https://buddybots.ai",
+        "email": "hello@buddybots.ai",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dubai",
+            "addressCountry": "AE"
+        },
+        "service": [
+            {
+                "@type": "Product",
+                "name": "Voice AI Agents",
+                "description": "Train phone/chat agents that resolve 70% of FAQs"
+            },
+            {
+                "@type": "Product", 
+                "name": "AI-Powered Lead Gen",
+                "description": "Real-time prospect scoring & outreach"
+            },
+            {
+                "@type": "Product",
+                "name": "Process Automation", 
+                "description": "Cross-app, end-to-end workflows (ERP, CRM, Slack)"
+            }
+        ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --bb-bg-dark: #0E1117;
+            --bb-bg-dark-alt: #151922;
+            --bb-text-primary: #FFFFFF;
+            --bb-text-muted: #94A3B8;
+            --bb-primary: #23D6FF;
+            --bb-accent: #FF8A00;
+            --bb-gradient-start: #23D6FF;
+            --bb-gradient-end: #00FFA3;
+            --bb-success: #16DBAA;
+            --bb-danger: #FF455B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bb-bg-dark);
+            color: var(--bb-text-primary);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .grid-12 {
+            grid-template-columns: repeat(12, 1fr);
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .flex-col {
+            flex-direction: column;
+        }
+        
+        .items-center {
+            align-items: center;
+        }
+        
+        .justify-center {
+            justify-content: center;
+        }
+        
+        .justify-between {
+            justify-content: space-between;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease-out;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--bb-primary);
+            color: var(--bb-bg-dark);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(35, 214, 255, 0.3);
+        }
+        
+        .btn-ghost {
+            background-color: transparent;
+            color: var(--bb-primary);
+            border: 2px solid var(--bb-primary);
+        }
+        
+        .btn-ghost:hover {
+            background-color: var(--bb-primary);
+            color: var(--bb-bg-dark);
+        }
+        
+        .btn-large {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .subtitle {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            color: var(--bb-text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-alt {
+            background-color: var(--bb-bg-dark-alt);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-left {
+            z-index: 2;
+        }
+        
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-animation {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--bb-primary), var(--bb-accent));
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+        
+        .trust-bar {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            opacity: 0.6;
+        }
+        
+        .trust-logo {
+            width: 120px;
+            height: 60px;
+            background-color: var(--bb-text-muted);
+            border-radius: 0.5rem;
+            opacity: 0.3;
+        }
+        
+        /* Pain Promise Strip */
+        .pain-promise {
+            padding: 3rem 0;
+        }
+        
+        .pain-items {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+        
+        .pain-item {
+            flex: 1;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .pain-emoji {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Services Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background-color: var(--bb-bg-dark-alt);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(35, 214, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            border-color: var(--bb-primary);
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--bb-primary);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Timeline */
+        .timeline {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .timeline-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--bb-gradient-start), var(--bb-gradient-end));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin: 0 auto 1rem;
+            color: var(--bb-bg-dark);
+        }
+        
+        /* Case Study */
+        .case-card {
+            background-color: var(--bb-bg-dark-alt);
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid var(--bb-primary);
+        }
+        
+        .chart-container {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .chart-bar {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .bar {
+            height: 200px;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .bar-before {
+            background-color: var(--bb-danger);
+        }
+        
+        .bar-after {
+            background-color: var(--bb-success);
+        }
+        
+        /* Video Testimonial */
+        .video-testimonial {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-color: var(--bb-bg-dark-alt);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .testimonial-card {
+            background-color: var(--bb-bg-dark-alt);
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--bb-primary);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .founder-image {
+            width: 100%;
+            height: 300px;
+            background-color: var(--bb-text-muted);
+            border-radius: 1rem;
+            opacity: 0.3;
+        }
+        
+        .cert-badges {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .cert-badge {
+            padding: 0.5rem 1rem;
+            background-color: var(--bb-primary);
+            color: var(--bb-bg-dark);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        /* Pricing */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background-color: var(--bb-bg-dark-alt);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(35, 214, 255, 0.2);
+            text-align: center;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--bb-primary);
+            transform: scale(1.05);
+        }
+        
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--bb-bg-dark-alt);
+            border-radius: 1rem;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            background-color: var(--bb-bg-dark-alt);
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--bb-text-muted);
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--bb-gradient-start), var(--bb-gradient-end));
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            color: var(--bb-bg-dark);
+            margin-bottom: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--bb-bg-dark-alt);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--bb-primary);
+        }
+        
+        .footer-section a {
+            color: var(--bb-text-muted);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a:hover {
+            color: var(--bb-primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+            padding-top: 1rem;
+            text-align: center;
+            color: var(--bb-text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--bb-bg-dark);
+            padding: 1rem;
+            border-top: 1px solid var(--bb-primary);
+            z-index: 1000;
+            display: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-content {
+                flex-direction: column-reverse;
+            }
+            
+            .pain-items {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .chart-container {
+                flex-direction: column;
+            }
+            
+            .video-testimonial {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .trust-bar {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .sticky-cta {
+                display: block;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .trust-bar {
+                gap: 1rem;
+            }
+            
+            .trust-logo {
+                width: 80px;
+                height: 40px;
+            }
+            
+            .btn {
+                padding: 0.875rem 1.5rem;
+            }
+            
+            .btn-large {
+                padding: 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1>Turn Chaos Into Competitive Advantage With Custom AI</h1>
+                    <p class="subtitle">We engineer tailor-made AI workflows that cut operating costs by <strong>up to 40%</strong> in 90 days.</p>
+                    <div class="flex gap-4" style="gap: 1rem; margin-bottom: 2rem;">
+                        <a href="#contact" class="btn btn-primary btn-large">Get Started Today</a>
+                        <a href="#services" class="btn btn-ghost">View Services</a>
+                    </div>
+                    <div class="trust-bar">
+                        <div class="trust-logo"></div>
+                        <div class="trust-logo"></div>
+                        <div class="trust-logo"></div>
+                        <div class="trust-logo"></div>
+                        <div class="trust-logo"></div>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-animation">
+                        🤖 → 💰
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pain Promise Strip -->
+    <section class="pain-promise section-alt">
+        <div class="container">
+            <div class="pain-items">
+                <div class="pain-item">
+                    <div class="pain-emoji">😫</div>
+                    <p>Manual tasks steal <strong>30%</strong> of your week.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-emoji">💸</div>
+                    <p>Unused SaaS drains <strong>$12–20k/yr</strong>.</p>
+                </div>
+                <div class="pain-item">
+                    <div class="pain-emoji">🚀</div>
+                    <p>Unified AI frees hours <em>and</em> slashes costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="text-center">Solutions That Ship in Weeks—Not Quarters</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎤</div>
+                    <h3>Voice AI Agents</h3>
+                    <p>Train phone/chat agents that resolve 70% of FAQs automatically. Deploy across multiple channels with natural conversation flows that feel human while maintaining consistent brand voice and escalating complex issues seamlessly.</p>
+                    <a href="#" class="btn btn-ghost" style="margin-top: 1rem;">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>AI-Powered Lead Gen</h3>
+                    <p>Real-time prospect scoring and personalized outreach that converts. Integrate with your CRM to identify high-value leads, automate follow-ups, and nurture prospects through intelligent sequences that adapt based on engagement patterns.</p>
+                    <a href="#" class="btn btn-ghost" style="margin-top: 1rem;">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Process Automation</h3>
+                    <p>Cross-app, end-to-end workflows connecting ERP, CRM, Slack and more. Eliminate manual data entry, automate approvals, and create intelligent workflows that adapt to your business rules while maintaining full audit trails.</p>
+                    <a href="#" class="btn btn-ghost" style="margin-top: 1rem;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="text-center">How It Works</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <h3>Discovery Call 📅</h3>
+                    <p>We map your KPIs, identify bottlenecks, and design a custom AI strategy tailored to your specific business needs and goals.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <h3>14-Day Pilot 🏗️</h3>
+                    <p>Deploy a working prototype in your production environment. See real results and ROI before committing to full implementation.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <h3>Scale & Support 📈</h3>
+                    <p>Expand successful pilots across your organization with ongoing optimization and support to compound your ROI over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Snapshot -->
+    <section class="section">
+        <div class="container">
+            <div class="case-card">
+                <h2 class="text-center">📈 37% Cost Reduction for FinTech Client in 60 Days</h2>
+                <div class="chart-container">
+                    <div class="chart-bar">
+                        <div class="bar bar-before" style="height: 160px;">
+                            <span>Before: $45k/mo</span>
+                        </div>
+                        <h4>Operating Costs</h4>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar bar-after" style="height: 100px;">
+                            <span>After: $28k/mo</span>
+                        </div>
+                        <h4>With AI Automation</h4>
+                    </div>
+                </div>
+                <p class="text-center" style="margin-top: 2rem;">Our AI agents automated 80% of customer support tickets and streamlined their loan processing workflow. The client recovered their investment in just 45 days.</p>
+                <blockquote style="margin-top: 2rem; padding: 1.5rem; background-color: var(--bb-bg-dark); border-radius: 0.5rem; text-align: center; font-style: italic;">
+                    "BuddyBots transformed our operations. We're now processing 3x more applications with the same team size."
+                    <footer style="margin-top: 1rem; font-weight: 600;">— Sarah Chen, COO at FinanceFlow</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video + Testimonial -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="video-testimonial">
+                <div class="video-container">
+                    <div style="font-size: 3rem;">▶️</div>
+                    <p style="position: absolute; bottom: 1rem;">Demo Video</p>
+                </div>
+                <div>
+                    <div class="testimonial-card">
+                        <p>"The ROI was immediate. Our customer service costs dropped 60% in the first month while satisfaction scores actually improved."</p>
+                        <footer style="margin-top: 1rem; font-weight: 600; color: var(--bb-primary);">— Mike Rodriguez, CEO</footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Founder Story -->
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="founder-image"></div>
+                <div>
+                    <h2>Meet Your AI Partner</h2>
+                    <p style="margin-bottom: 1.5rem;">Founded by former Google AI engineers with 15+ years in enterprise automation, BuddyBots.ai specializes in practical AI implementations that deliver measurable results. We've helped 200+ companies reduce costs while improving customer experience through intelligent automation.</p>
+                    <p style="margin-bottom: 1.5rem;">Our team combines deep technical expertise with business acumen, ensuring every AI solution we build directly impacts your bottom line. We don't just build technology—we build competitive advantages.</p>
+                    <div class="cert-badges">
+                        <span class="cert-badge">OpenAI Partner</span>
+                        <span class="cert-badge">AWS Activate</span>
+                    </div>
+                    <p style="margin-top: 1.5rem; color: var(--bb-text-muted);">📍 Headquartered in Dubai, UAE</p>
+                    <a href="#contact" class="btn btn-ghost" style="margin-top: 1.5rem;">Schedule a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="text-center">Pricing & 90-Day ROI Guarantee</h2>
+            <div class="pricing-table">
+                <div class="pricing-card">
+                    <h3>Simple Starter</h3>
+                    <div style="font-size: 2rem; font-weight: 700; margin: 1rem 0;">$5,000</div>
+                    <p style="color: var(--bb-text-muted); margin-bottom: 2rem;">One-time setup</p>
+                    <ul style="text-align: left; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.5rem;">✅ Single AI workflow</li>
+                        <li style="margin-bottom: 0.5rem;">✅ 14-day pilot program</li>
+                        <li style="margin-bottom: 0.5rem;">✅ Basic integration</li>
+                        <li style="margin-bottom: 0.5rem;">✅ 30-day support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-ghost">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Growth Partner</h3>
+                    <div style="font-size: 2rem; font-weight: 700; margin: 1rem 0;">$15,000</div>
+                    <p style="color: var(--bb-text-muted); margin-bottom: 2rem;">Monthly retainer</p>
+                    <ul style="text-align: left; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.5rem;">✅ Multiple AI workflows</li>
+                        <li style="margin-bottom: 0.5rem;">✅ Advanced integrations</li>
+                        <li style="margin-bottom: 0.5rem;">✅ Custom training</li>
+                        <li style="margin-bottom: 0.5rem;">✅ Ongoing optimization</li>
+                        <li style="margin-bottom: 0.5rem;">✅ Priority support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Start Partnership</a>
+                </div>
+            </div>
+            <div class="guarantee">
+                <div style="font-size: 2rem;">🛡️</div>
+                <div>
+                    <h3>90-Day ROI Guarantee</h3>
+                    <p>If you don't see measurable cost savings within 90 days, we work for free until you do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            <div style="max-width: 800px; margin: 3rem auto 0;">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How quickly can we see results?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Most clients see initial results within 14 days of deployment. Full ROI typically materializes within 60-90 days as the AI systems learn and optimize.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is our data secure?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. We use enterprise-grade encryption, comply with GDPR/CCPA, and can deploy on-premise or in your private cloud for maximum security.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Will this work with our existing tools?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. Our AI solutions integrate with 500+ popular business tools including Salesforce, HubSpot, Slack, Microsoft 365, and custom APIs.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What if we need changes after deployment?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        All Growth Partner clients receive ongoing optimization and updates. Simple Starter clients can upgrade anytime or purchase additional support hours.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How do you measure ROI?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We track time saved, cost reduction, error elimination, and revenue impact. You'll receive monthly reports showing exactly how AI is improving your bottom line.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you provide training for our team?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. We provide comprehensive training for your team and create documentation so you can manage and optimize the AI systems independently.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to unlock hidden profit with AI?</h2>
+            <a href="#contact" class="btn btn-primary btn-large" style="background-color: var(--bb-bg-dark); color: var(--bb-text-primary);">Start Your 14-Day Pilot</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>BuddyBots.ai</h4>
+                    <p style="color: var(--bb-text-muted);">AI that actually works.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#hero">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#case-study">Case Study</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@buddybots.ai">hello@buddybots.ai</a>
+                    <p style="color: var(--bb-text-muted);">Dubai 🇦🇪</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BuddyBots.ai. All rights reserved. | <a href="#" style="color: var(--bb-text-muted);">Privacy Policy</a> | <a href="#" style="color: var(--bb-text-muted);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA for Mobile -->
+    <div class="sticky-cta">
+        <div class="container">
+            <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started Today</a>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-question span:last-child').textContent = '+';
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+                element.querySelector('span:last-child').textContent = '−';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Show/hide sticky CTA based on scroll position
+        let lastScrollTop = 0;
+        const stickyCta = document.querySelector('.sticky-cta');
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Show sticky CTA when scrolled past hero and not at bottom
+            if (scrollTop > windowHeight && scrollTop < documentHeight - windowHeight - 100) {
+                stickyCta.style.display = 'block';
+            } else {
+                stickyCta.style.display = 'none';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Add contact form functionality
+        const contactSection = document.createElement('section');
+        contactSection.id = 'contact';
+        contactSection.className = 'section section-alt';
+        contactSection.innerHTML = `
+            <div class="container">
+                <h2 class="text-center">Get Started Today</h2>
+                <div style="max-width: 600px; margin: 3rem auto 0;">
+                    <form style="display: grid; gap: 1.5rem;">
+                        <input type="text" placeholder="Your Name" required style="padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--bb-text-muted); background-color: var(--bb-bg-dark); color: var(--bb-text-primary);">
+                        <input type="email" placeholder="Your Email" required style="padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--bb-text-muted); background-color: var(--bb-bg-dark); color: var(--bb-text-primary);">
+                        <input type="text" placeholder="Company Name" style="padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--bb-text-muted); background-color: var(--bb-bg-dark); color: var(--bb-text-primary);">
+                        <textarea placeholder="Tell us about your biggest operational challenge..." rows="4" style="padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--bb-text-muted); background-color: var(--bb-bg-dark); color: var(--bb-text-primary); resize: vertical;"></textarea>
+                        <button type="submit" class="btn btn-primary btn-large">Schedule Discovery Call</button>
+                    </form>
+                </div>
+            </div>
+        `;
+        
+        // Insert contact section before footer
+        const footer = document.querySelector('footer');
+        footer.parentNode.insertBefore(contactSection, footer);
+    </script>
+</body>
+</html>
